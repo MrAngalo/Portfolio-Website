@@ -1,1 +1,14 @@
-scripts\\pre-commit.bat
+# Step 1: Get the list of staged files before formatting
+staged_files_before=$(git diff --name-only --cached)
+
+# Step 2: Format files using Prettier
+npm run prettier
+
+# Step 3: Get the list of staged files after formatting
+staged_files_after=$(git diff --name-only --cached)
+
+# Step 4: Compare the staged files before and after
+if [ "$staged_files_before" != "$staged_files_after" ]; then
+  echo "❌ Prettier made changes to the staged files. Please re-stage and commit again."
+  exit 1
+fi
