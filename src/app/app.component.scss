@@ -15,6 +15,8 @@
     height: $header-height;
     padding: 0 calc(50% - $header-width / 2);
     width: $header-width;
+    position: sticky;
+    top: 0;
 
     > .tabs {
         justify-content: space-between;
