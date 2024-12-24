@@ -1,0 +1,27 @@
+$content-width: 1000px;
+$content-padding: 20px;
+
+.header {
+    background: blue;
+    height: 50px;
+}
+
+.content-wrapper {
+    padding: 0 calc(50% - ($content-width - $content-padding) / 2);
+    width: $content-width - $content-padding;
+    max-width: 100%;
+
+    > * {
+        padding: 0 $content-padding;
+    }
+}
+
+.welcome {
+    background: lightblue;
+    > .content {
+        display: inline-block;
+    }
+    > .video {
+        height: calc(43.75vw + 100px);
+    }
+}
