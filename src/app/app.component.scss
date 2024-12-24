@@ -1,9 +1,4 @@
-$content-min-width: 400px;
-$content-width: 1000px;
-$content-padding: 20px;
-
-$header-width: 600px;
-$header-height: 50px;
+@import "../styles.scss";
 
 .content-wrapper {
     padding: 0 calc(50% - ($content-width - $content-padding) / 2);
