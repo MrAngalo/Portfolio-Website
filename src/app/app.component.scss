@@ -1,3 +1,4 @@
+$content-min-width: 400px;
 $content-width: 1000px;
 $content-padding: 20px;
 
@@ -41,7 +42,8 @@ $header-height: 50px;
     }
     > .video {
         height: 66.67vw;
-        max-height: 666.7px;
+        max-height: $content-width * 0.667;
+        min-height: $content-min-width * 0.667;
 
         > iframe {
             width: 100%;
