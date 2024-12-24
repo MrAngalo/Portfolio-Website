@@ -34,9 +34,6 @@
     background: lightblue;
     padding-top: 20px;
     padding-bottom: 30px;
-    > .content {
-        display: inline-block;
-    }
     > .video {
         height: 66.67vw;
         max-height: $content-width * 0.667;
@@ -59,4 +56,8 @@
             display: block;
         }
     }
+}
+
+.projects {
+    background: burlywood;
 }
