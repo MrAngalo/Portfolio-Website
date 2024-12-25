@@ -30,4 +30,21 @@
 
 .projects {
     background: burlywood;
+    padding-bottom: 50px;
+
+    > .scrollable {
+        overflow-x: scroll;
+
+        > .cards {
+            display: flex;
+            width: max-content;
+            gap: 20px;
+
+            > .card {
+                width: 300px;
+                height: 350px;
+                background: white;
+            }
+        }
+    }
 }
