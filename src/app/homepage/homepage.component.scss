@@ -53,6 +53,10 @@
                 background: white;
             }
         }
+
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
     }
 
     > .buttons {
