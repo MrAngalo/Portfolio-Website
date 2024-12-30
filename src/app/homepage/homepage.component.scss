@@ -45,7 +45,7 @@
     > .content {
         padding: 0 calc(50% - $content-width / 2);
         width: $content-width;
-        max-width: calc(100% - 20px);
+        max-width: calc(100% - 2 * $content-padding);
     }
 
     > .scrollable {
@@ -128,7 +128,7 @@
     > .content {
         padding: 0 calc(50% - $content-width / 2);
         width: $content-width;
-        max-width: calc(100% - 20px);
+        max-width: calc(100% - 2 * $content-padding);
     }
 
     > .cards {
