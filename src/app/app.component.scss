@@ -33,3 +33,16 @@
 .header-spacing {
     height: $header-height;
 }
+
+.footer {
+    background: blue;
+    height: $footer-height;
+    padding: 0 calc(50% - $footer-width / 2);
+    width: $footer-width;
+
+    padding-top: 10px;
+
+    > .content {
+        text-align: center;
+    }
+}
