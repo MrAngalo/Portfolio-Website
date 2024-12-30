@@ -24,12 +24,14 @@
     }
     > .buttons {
         margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
 
         > button {
-            width: 300px;
+            min-width: 300px;
             height: 80px;
-            margin: auto;
-            display: block;
         }
     }
 }
@@ -68,12 +70,14 @@
 
     > .buttons {
         margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
 
         > button {
-            width: 300px;
+            min-width: 300px;
             height: 80px;
-            margin: auto;
-            display: block;
         }
     }
 }
