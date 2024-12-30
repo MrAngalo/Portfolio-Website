@@ -1,0 +1,25 @@
+@import "../../styles.scss";
+
+.header {
+    background: blue;
+    height: $header-height;
+    padding: 0 calc(50% - $header-width / 2);
+    width: $header-width;
+    position: fixed;
+    top: 0;
+
+    > .tabs {
+        justify-content: space-between;
+        display: flex;
+
+        > a {
+            width: fit-content;
+            line-height: $header-height;
+            text-align: center;
+        }
+    }
+}
+
+.header-spacing {
+    height: $header-height;
+}
