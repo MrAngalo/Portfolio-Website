@@ -80,28 +80,36 @@
 
 .about {
     background: yellow;
+    padding-top: 20px;
+    padding-bottom: 30px;
 
-    .content {
+    > .title {
+        > h1 {
+            text-align: center;
+        }
+    }
+
+    > .container {
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
 
-        > * {
-            background: blue;
-            flex: 1;
-        }
-
         > .image {
-            min-width: min(255px, 100%);
-            max-width: $content-min-width - 2 * $content-padding;
+            min-width: 225px;
+            max-width: 300px;
+            flex: 1;
+
+            display: flex; // Centers image
+
             > img {
                 width: 100%;
+                max-height: 100%;
             }
         }
 
         > .description {
-            min-width: min(520px, 100%);
+            min-width: min(300px, 100%);
             flex: 2;
         }
     }
