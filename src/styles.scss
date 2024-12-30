@@ -1,4 +1,4 @@
-$content-min-width: 400px;
+$content-min-width: 450px;
 $content-width: 1000px;
 $content-padding: 20px;
 
@@ -11,7 +11,7 @@ $scrollable-cards-width: $content-width * 1.5;
 
 html,
 body {
-    min-width: 400px;
+    min-width: $content-min-width;
     height: 100%;
 }
 
