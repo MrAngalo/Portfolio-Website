@@ -15,7 +15,7 @@
     height: $header-height;
     padding: 0 calc(50% - $header-width / 2);
     width: $header-width;
-    position: sticky;
+    position: fixed;
     top: 0;
 
     > .tabs {
@@ -28,4 +28,8 @@
             text-align: center;
         }
     }
+}
+
+.header-spacing {
+    height: $header-height;
 }
