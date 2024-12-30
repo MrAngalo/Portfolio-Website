@@ -81,6 +81,7 @@
     background: green;
     padding: 0 calc(50% - $skill-cards-width / 2);
     width: $skill-cards-width;
+    padding-bottom: 30px;
 
     > .content {
         padding: 0 calc(50% - $content-width / 2);
