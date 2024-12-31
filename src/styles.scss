@@ -12,6 +12,13 @@ $scrollable-cards-width: $content-width * 1.5;
 
 $skill-cards-width: 1300px;
 
+@font-face {
+    font-family: "Kingthings Clarity";
+    src:
+        local("Kingthings Clarity"),
+        url("/assets/font/Kingthings Clarity.ttf") format("truetype");
+}
+
 html,
 body {
     min-width: $content-min-width;
@@ -20,6 +27,7 @@ body {
 
 body {
     margin: 0;
+    font-family: "Kingthings Clarity";
 }
 
 // Remove text decorations
@@ -30,6 +38,10 @@ a {
     &:hover {
         text-decoration: underline;
     }
+}
+
+button {
+    font: inherit;
 }
 
 // Titles
