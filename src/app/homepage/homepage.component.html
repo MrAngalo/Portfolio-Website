@@ -22,32 +22,14 @@
     </div>
     <div class="scrollable">
         <div class="cards">
-            <div class="card" [style.background]="'url(\'' + test + '\')'">
-                hello world
-            </div>
-            <div class="card"></div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-        </div>
-    </div>
-    <div class="scrollable">
-        <div class="cards">
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
-            <div class="card">hello world</div>
+            @for (card of projectCards; track card.title) {
+                <div
+                    class="card"
+                    [style.background]="'url(\'' + card.image + '\')'"
+                >
+                    {{ card.title }}
+                </div>
+            }
         </div>
     </div>
     <div class="buttons">
