@@ -39,10 +39,11 @@
     width: $scrollable-cards-width;
     padding-bottom: 30px;
 
-    > .content {
+    > .title {
         padding: 0 calc(50% - $content-width / 2);
         width: $content-width;
         max-width: calc(100% - 2 * $content-padding);
+        text-align: center;
     }
 
     > .scrollable {
