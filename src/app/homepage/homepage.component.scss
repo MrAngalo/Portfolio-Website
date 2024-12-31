@@ -63,6 +63,8 @@
                 padding: 20px;
                 box-sizing: border-box;
 
+                position: relative;
+
                 // Transition
                 background-color: rgba(0, 0, 0, 0);
                 background-blend-mode: darken;
@@ -86,6 +88,19 @@
 
                     > .card-description {
                         font-size: 20px;
+                    }
+
+                    > .card-button {
+                        position: absolute;
+                        padding-top: 50px;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background-image: linear-gradient(
+                            180deg,
+                            rgba(0, 0, 0, 0) 0%,
+                            black 50%
+                        );
                     }
                 }
 
