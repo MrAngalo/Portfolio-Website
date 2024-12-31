@@ -7,4 +7,6 @@ import {Component} from '@angular/core';
     templateUrl: './homepage.component.html',
     styleUrl: './homepage.component.scss'
 })
-export class HomepageComponent {}
+export class HomepageComponent {
+    test = '/assets/300x350.svg';
+}
