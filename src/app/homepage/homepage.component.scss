@@ -1,7 +1,7 @@
 @import "../../styles.scss";
 
 .welcome {
-    background: lightblue;
+    background: $color-secondary;
     padding-top: 20px;
     padding-bottom: 30px;
     > .title {

@@ -53,10 +53,12 @@ button {
 // Titles
 h1 {
     display: inline-block;
+    color: $color-text;
 }
 
 p {
     font-size: 24px;
     font-weight: bold;
     display: inline-block;
+    color: $color-text;
 }
