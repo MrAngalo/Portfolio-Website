@@ -12,6 +12,12 @@ $scrollable-cards-width: $content-width * 1.5;
 
 $skill-cards-width: 1300px;
 
+$color-primary: #40008a;
+$color-secondary: #466ace;
+$color-tertiary: #a19aff;
+$color-accent: #9754f8;
+$color-text: #ffffff;
+
 @font-face {
     font-family: "Kingthings Clarity";
     src:
@@ -33,7 +39,7 @@ body {
 // Remove text decorations
 a {
     text-decoration: none;
-    color: inherit;
+    color: $color-text;
 
     &:hover {
         text-decoration: underline;

@@ -1,7 +1,7 @@
 @import "../../styles.scss";
 
 .header {
-    background: blue;
+    background: $color-primary;
     height: $header-height;
     padding: 0 calc(50% - $header-width / 2);
     width: $header-width;
