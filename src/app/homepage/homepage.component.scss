@@ -34,7 +34,7 @@
 }
 
 .projects {
-    background: burlywood;
+    background: $color-tertiary;
     padding: 0 calc(50% - $scrollable-cards-width / 2);
     width: $scrollable-cards-width;
     padding-bottom: 30px;
