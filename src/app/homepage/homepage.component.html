@@ -78,17 +78,13 @@
         </p>
     </div>
     <div class="cards">
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
-        <div class="card">hello world</div>
+        @for (icon of programIcons; track icon.name) {
+            <div
+                class="card"
+                [style.background-image]="'url(\'' + icon.image + '\')'"
+            >
+                {{ icon.name }}
+            </div>
+        }
     </div>
 </div>
