@@ -16,10 +16,18 @@ export type CardInfo = {
 })
 export class HomepageComponent {
     test = '/assets/300x350.svg';
-    projectCards: CardInfo[] = Array(10).fill({
-        image: '/assets/300x350.svg',
-        title: 'Project name #1',
-        description: 'Project description',
-        redirect: '#'
-    });
+    projectCards: CardInfo[] = [
+        {
+            image: '/assets/300x350.svg',
+            title: 'Project name #1',
+            description: 'Project description',
+            redirect: '#'
+        },
+        {
+            image: '/assets/400x600.svg',
+            title: 'Project name #1',
+            description: 'Project description',
+            redirect: '#'
+        }
+    ];
 }
