@@ -8,6 +8,8 @@
         "watch": "ng build --watch --configuration development",
         "prettier": "npx prettier . --write",
         "test": "ng test",
+        "dockerfile": "docker build --pull --rm -f \"Dockerfile\" -t portfolio:latest \".\"",
+        "dockercompose": "docker compose -f \"docker-compose.yml\" up -d --build",
         "prepare": "husky"
     },
     "private": true,
