@@ -10,6 +10,4 @@ services:
             - "20-21:20-21"
             - "40000-40009:40000-40009"
         volumes:
-            - content:/home/user
-volumes:
-    content:
+            - ./src/assets/content:/home/${FTP_USER}
