@@ -11,3 +11,9 @@ services:
             - "40000-40009:40000-40009"
         volumes:
             - ./src/assets/content:/home/${FTP_USER}
+    website:
+        image: portfolio:latest
+        ports:
+            - "80:80"
+        volumes:
+            - ./src/assets/content:/usr/share/nginx/html/assets/content
