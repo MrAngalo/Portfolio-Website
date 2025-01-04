@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    ftp-server:
+        image: ibraransaridocker/ftp-server
+        restart: always
+        environment:
+            FTP_PASS: ${FTP_PASS}
+            FTP_USER: ${FTP_USER}
+        ports:
+            - "20-21:20-21"
+            - "40000-40009:40000-40009"
+        volumes:
+            - content:/home/${FTP_USER}
+    website:
+        image: mrangalo/portfolio-website-docker:master
+        pull_policy: always
+        ports:
+            - "8075:80"
+        volumes:
+            - content:/usr/share/nginx/html/assets/content
+volumes:
+    content:

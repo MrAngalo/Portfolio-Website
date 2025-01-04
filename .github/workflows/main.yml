@@ -1,22 +1,48 @@
 on:
-  push:
-    branches:
-      - ${{ secrets.MAIN_BRANCH }}
-  
+    push:
+        branches:
+            - master
 jobs:
-  run_pull:
-    name: run pull
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: install ssh keys
-      # check this thread to understand why its needed:
-      # https://stackoverflow.com/a/70447517
-      run: |
-        install -m 600 -D /dev/null ~/.ssh/id_rsa
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
-    - name: connect and pull
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
-    - name: cleanup
-      run: rm -rf ~/.ssh
+    push_to_registry:
+        name: Push Docker image to Docker Hub
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Check out the repo
+              uses: actions/checkout@v3
+            - name: Log in to Docker Hub
+              uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+              with:
+                  username: "${{ secrets.DOCKER_USERNAME }}"
+                  password: "${{ secrets.DOCKER_PASSWORD }}"
+            - name: "Extract metadata (tags, labels) for Docker"
+              id: meta
+              uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+              with:
+                  images: mrangalo/portfolio-website-docker
+            - name: Build and push Docker image
+              uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+              with:
+                  context: .
+                  push: true
+                  tags: "${{ steps.meta.outputs.tags }}"
+                  labels: "${{ steps.meta.outputs.labels }}"
+    run_pull:
+        name: Run Pull
+        needs: push_to_registry
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Install SSH Keys
+              run: |
+                  install -m 600 -D /dev/null ~/.ssh/id_rsa
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+                  ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+            - name: Connect, Pull, and Restart docker
+              run: >-
+                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+                  "cd ${{secrets.WORK_DIR }} &&
+                  wget https://github.com/MrAngalo/Portfolio-Website/raw/refs/heads/master/docker-compose-pro.yml -O docker-compose-pro.yml &&
+                  docker compose -f "docker-compose-pro.yml" up -d --build &&
+                  docker system prune -f &&
+                  exit"
+            - name: cleanup
+              run: rm -rf ~/.ssh
