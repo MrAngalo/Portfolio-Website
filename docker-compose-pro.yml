@@ -6,6 +6,9 @@ services:
         environment:
             FTP_PASS: ${FTP_PASS}
             FTP_USER: ${FTP_USER}
+            PASV_ADDRESS: ${PASV_ADDRESS}
+            PASV_MIN_PORT: 9050
+            PASV_MAX_PORT: 9060
         ports:
             - "9020-9021:20-21"
             - "9050-9060:9050-9060"
