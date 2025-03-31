@@ -7,15 +7,15 @@ services:
             FTP_PASS: ${FTP_PASS}
             FTP_USER: ${FTP_USER}
         ports:
-            - "20-21:20-21"
-            - "40000-40009:40000-40009"
+            - "9020-9021:20-21"
+            - "9050-9060:9050-9060"
         volumes:
             - content:/home/${FTP_USER}
     website:
         image: mrangalo/portfolio-website-docker:master
         pull_policy: always
         ports:
-            - "8075:80"
+            - "9000:80"
         volumes:
             - content:/usr/share/nginx/html/assets/content
 volumes:
