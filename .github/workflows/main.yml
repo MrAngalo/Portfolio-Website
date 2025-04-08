@@ -58,7 +58,7 @@ jobs:
                   docker system prune -f &&
                   exit"
             - name: cleanup
-              run: rm -rf ~/.
+              run: rm -rf ~/.ssh
             - name: Discord notification
               env:
                   DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
